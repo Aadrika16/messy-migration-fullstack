@@ -8,7 +8,7 @@ const HomePage = () => {
 
   const getUsers = async () => {
     try {
-      const res = await fetch("http://localhost:3000/users");
+      const res = await fetch("https://messy-migration-backend.onrender.com/users");
       const data = await res.json();
       setUsers(data);
     } catch (err) {
@@ -22,7 +22,7 @@ const HomePage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:3000/user/${id}`, {
+      await fetch(`https://messy-migration-backend.onrender.com/user/${id}`, {
         method: "DELETE",
       });
       getUsers(); // Refresh list
