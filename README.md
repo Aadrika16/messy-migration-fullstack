@@ -1,70 +1,153 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+📘 User Management System
+This is a full-stack User Management System built using:
 
-In the project directory, you can run:
+Frontend: React.js
 
-### `npm start`
+Backend: Node.js, Express.js, SQLite
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Authentication: bcrypt (password hashing), JWT (token-based login)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Styling: (Optional — Add CSS, Bootstrap, etc., if used)
 
-### `npm test`
+🚀 Features
+✅ Current Functionality
+🧑 Backend (Node.js + Express + SQLite)
+Register new users (hashed passwords)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+User login with JWT token
 
-### `npm run build`
+Fetch all users
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Fetch user by ID
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Update user details
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Delete user
 
-### `npm run eject`
+Search users by name
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🌐 Frontend (React.js)
+User Signup form
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+User Login form
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Dashboard or User List (if built)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Navigation between Login and Signup
 
-## Learn More
+🔧 Technologies Used
+📦 Backend
+Node.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Express.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+SQLite
 
-### Code Splitting
+bcrypt (password hashing)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+cors (CORS configuration)
 
-### Analyzing the Bundle Size
+sqlite (with async/await)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+jsonwebtoken (for login token generation)
 
-### Making a Progressive Web App
+🖼️ Frontend
+React.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+react-router-dom (v6)
 
-### Advanced Configuration
+api (for API calls)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+🗂️ API Endpoints (Backend Routes)
+Method	Endpoint	Description
+GET	/	Home route
+GET	/users	Get all users
+GET	/user/:user_id	Get a user by ID
+POST	/users	Create a new user
+PUT	/user/:user_id	Update user by ID
+DELETE	/user/:user_id	Delete user by ID
+GET	/search?name=xyz	Search users by name
+POST	/login	Login and get JWT token
 
-### Deployment
+📁 Project Structure
+pgsql
+Copy
+Edit
+/backend
+  ├── users.db
+  ├── index.js       # Express + SQLite API
+  └── package.json
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+/frontend
+  ├── src
+  │   ├── components
+  │   ├── pages
+  │   ├── App.js
+  │   └── index.js
+  └── package.json
+🚧 Future Development Ideas
+🔜 Frontend
+Dashboard to view/edit/delete users
 
-### `npm run build` fails to minify
+Role-based UI (Admin, User, etc.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Form validations (e.g., regex email, strong password)
+
+Toast notifications (success/error)
+
+Pagination and sorting of user list
+
+Forgot password functionality
+
+User profile page
+
+🔜 Backend
+User roles (Admin, Normal)
+
+Email verification system
+
+Password reset with email link
+
+Refresh token-based authentication
+
+Logging and error handling middleware
+
+Integration with frontend deployment (e.g., Netlify + Render)
+
+Migrate SQLite to PostgreSQL or MongoDB (for production scaling)
+
+📦 Packages Used
+Backend
+nginx
+Copy
+Edit
+npm install express sqlite3 sqlite bcrypt cors jsonwebtoken
+Frontend
+nginx
+Copy
+Edit
+npm install react-router-dom axios
+🛠️ Setup Instructions
+📍 Backend
+bash
+Copy
+Edit
+cd backend
+npm install
+node index.js
+📍 Frontend
+bash
+Copy
+Edit
+cd frontend
+npm install
+npm start
+Make sure to set the correct CORS origin in backend:
+
+js
+Copy
+Edit
+app.use(cors({ origin: "http://localhost:3001" }));
+And update frontend API URLs to http://localhost:3000 (or your backend port).
