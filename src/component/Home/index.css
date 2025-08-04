@@ -1,0 +1,112 @@
+/* Base Styles */
+.home-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.search-box {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.user-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.user-card {
+  background-color: white;
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-4px);
+}
+
+.user-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.user-card p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.user-card button {
+  background-color: #e3342f;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.user-card button:hover {
+  background-color: #cc1f1a;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .search-box {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+
+  .user-card {
+    padding: 1rem;
+  }
+
+  .user-card h3 {
+    font-size: 1rem;
+  }
+
+  .user-card button {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .user-card {
+    padding: 0.9rem;
+  }
+
+  .user-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .user-card button {
+    width: 100%;
+    padding: 0.6rem;
+  }
+}
